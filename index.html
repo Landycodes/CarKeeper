@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarKeeper</title>
+</head>
+<body>
+    <h2>Maintenance</h2>
+    <ul>
+        <li>Oil Change: <span id="oil"></span> </li>
+        <li>Coolant Flush: <span id="coolant"></span></li>
+        <li>Brake/Clutch Fluid: <span id="brake"></span></li>
+        <li>Power Steering: <span id="ps"></span></li>
+        <li>Transmission Flush: <span id="trans"></span></li>
+        <li>Tire Rotation: <span id="tiro"></span></li>
+    </ul>
+    <h3>Perfomed</h3>
+    <form id="maint-input">
+    <label for="maint-menu"> maintenance menu</label>
+    <select name="maint-menu" id="maint-menu">
+        <option value="oil">Oil Change</option>
+        <option value="coolant">Coolant Flush</option>
+        <option value="brake">Brake/Clutch Fluid</option>
+        <option value="ps">Power Steering Flush</option>
+        <option value="trans">Transmission Flush</option>
+        <option value="tiro">Tire Rotation</option>
+    </select>
+    <label for="miles">Current Mileage:</label>
+    <input type="text" id="miles"/>
+    <button type="submit">Enter</button>
+    </form>
+    <script src="./script.js"></script>
+</body>
+</html>
