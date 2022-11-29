@@ -8,10 +8,14 @@
     <link rel="stylesheet" href="./style.css">
     <title>CarKeeper</title>
 </head>
-<body class="d-flex flex-column align-items-center text-light">
-    <br>
-    <h2 class="text-center p-2">Maintenance</h2>
-    <br>
+<body>
+    <nav class="nav-fill d-flex align-items-center justify-content-between">
+        <img class="menu invisible" src="./assets/menu_icon.png" alt="Menu">
+        <h2 class="text-white">Maintenance</h2>
+        <img class="menu mr-2" src="./assets/menu_icon.png" alt="Menu">
+    </nav>
+    <div class="d-flex flex-column align-items-center text-light">
+        <br>
     <ul class="list-unstyled p-2">
         <li>Oil Change: <span id="oil"></span></li>
         <li>Coolant Flush: <span id="coolant"></span></li>
@@ -37,6 +41,7 @@
     <button type="submit" class="btn shadow btn-dark text-white border-0 btn-outline-secondary">Enter</button>
     </form>
     <br>
+    </div>
     <script src="./script.js"></script>
 </body>
 </html>

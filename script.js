@@ -28,43 +28,49 @@ menuInput.addEventListener('submit', (event) => {
         miles = Number(miles)
 
     } else {
+        //change alert to modal
         alert('please enter current mileage')
         return
     }
     switch(menVal) {
         case 'oil':
-            let oilInt = miles + 3500
+            let oilInt = miles + 3500;
             oil.textContent = oilInt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             localStorage.setItem('oil', oil.textContent)
         break;
         case 'coolant':
-            let coolInt = miles + 16000
+            let coolInt = miles + 16000;
             coolant.textContent = coolInt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-            localStorage.setItem('coolant', coolant.textContent.toString())
+            localStorage.setItem('coolant', coolant.textContent)
         break;
         case 'brake':
-                brake.textContent = miles + 30000;
-                localStorage.setItem('brake', brake.textContent.toString())
+            let brakeInt = miles + 30000;
+            brake.textContent = brakeInt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            localStorage.setItem('brake', brake.textContent)
         break;
         case 'ps':
-            ps.textContent = miles + 30000;
-            localStorage.setItem('ps', ps.textContent.toString())
+            let psInt = miles + 30000;
+            ps.textContent = psInt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            localStorage.setItem('ps', ps.textContent)
         break;
         case 'trans':
-            trans.textContent = miles + 45000;
-            localStorage.setItem('trans', trans.textContent.toString())
+            let transInt = miles + 45000;
+            trans.textContent = transInt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            localStorage.setItem('trans', trans.textContent)
         break;
         case 'tiro':
-            tiro.textContent = miles + 7000;
-            localStorage.setItem('tiro', tiro.textContent.toString())
+            let tiroInt = miles + 7000;
+            tiro.textContent = tiroInt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            localStorage.setItem('tiro', tiro.textContent)
     }
+    location.reload();
 });
 
 //attaches miles to number if not empty
 const Milestxt = () => {
     for(let i = 0; i < spanEl.length; i++) {
-        if(spanEl[i].innerText !== '' && spanEl[i].innerText !== 'Miles') {
-            spanEl[i].insertAdjacentHTML('afterend', '<small> Miles</small>')
+        if(spanEl[i].innerText !== '') {
+            spanEl[i].insertAdjacentHTML('beforeend', '<small> Miles</small>')
         }
     }
 }

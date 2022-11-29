@@ -1,17 +1,38 @@
-html {
-    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.3);
-    min-height: 100%;
-}
-body {
-    background-image: url('https://cdn1.vectorstock.com/i/1000x1000/08/40/auto-spare-parts-seamless-pattern-vector-8110840.jpg');
+:root{
+    --blk: rgba(0, 0, 0, 0.696);
 }
 
-h2, h5, label, ul {
-    background-color: rgba(0, 0, 0, 0.696);
+html {
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.35);
+    min-height: 100%;
+}
+
+body {
+    background-image: url('./assets/Maintenance_bg.png');
+}
+
+h5, label, ul {
+    background-color: var(--blk);
     border-radius: 15px;
 }
-li, span {
+
+nav {
+    background-color: var(--blk);
+}
+li {
     font-size: 18px;
+    border-bottom: 3px solid rgba(86, 84, 84, 0.855);
+}
+li:last-child {
+    border: none;
+}
+
+.menu {
+    cursor: pointer;
+    margin: 0;
+    height: 80px;
+    width: auto;
+    position: relative;
 }
 
 
