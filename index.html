@@ -5,37 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="./style.css">
     <title>CarKeeper</title>
 </head>
-<body class="d-flex flex-column align-items-center bg-dark text-light">
+<body class="d-flex flex-column align-items-center text-light">
     <br>
-    <h2 class="border-bottom">Maintenance</h2>
+    <h2 class="text-center p-2">Maintenance</h2>
     <br>
-    <ul class="list-unstyled border p-2">
-        <li>Oil Change: <span id="oil"></span> </li>
+    <ul class="list-unstyled p-2">
+        <li>Oil Change: <span id="oil"></span></li>
         <li>Coolant Flush: <span id="coolant"></span></li>
         <li>Brake/Clutch Fluid: <span id="brake"></span></li>
         <li>Power Steering: <span id="ps"></span></li>
         <li>Transmission Flush: <span id="trans"></span></li>
         <li>Tire Rotation: <span id="tiro"></span></li>
     </ul>
-    <h5>Performed</h5>
     <form id="maint-input" class="d-flex flex-column">
-    <select name="maint-menu" id="maint-menu">
-        <option value="oil">Oil Change</option>
-        <option value="coolant">Coolant Flush</option>
-        <option value="brake">Brake/Clutch Fluid</option>
-        <option value="ps">Power Steering Flush</option>
-        <option value="trans">Transmission Flush</option>
-        <option value="tiro">Tire Rotation</option>
-    </select>
+        <label for="select" class="text-center font-weight-bold p-1">Performed</label>
+        <select name="maint-menu" id="maint-menu">
+            <option value="oil">Oil Change</option>
+            <option value="coolant">Coolant Flush</option>
+            <option value="brake">Brake/Clutch Fluid</option>
+            <option value="ps">Power Steering Flush</option>
+            <option value="trans">Transmission Flush</option>
+            <option value="tiro">Tire Rotation</option>
+        </select>
     <br>
-    <label for="miles" class="text-center font-weight-bold">Current Mileage</label>
-    <input type="text" id="miles"/>
+    <label for="miles" class="text-center font-weight-bold p-1">Current Mileage</label>
+    <input type="text" id="miles" class="shadow border-0"/>
     <br>
-    <button type="submit" class="btn btn-light">Enter</button>
+    <button type="submit" class="btn shadow btn-dark text-white border-0 btn-outline-secondary">Enter</button>
     </form>
+    <br>
     <script src="./script.js"></script>
 </body>
 </html>
