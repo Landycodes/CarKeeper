@@ -6,7 +6,7 @@
  const trans = document.querySelector('#trans');
  const tiro = document.querySelector('#tiro');
 
- const spanEl = document.querySelectorAll('span')
+ const spanEl = document.querySelectorAll('.span')
 
  //get and set stored values
  oil.textContent = localStorage.getItem('oil');
@@ -29,7 +29,14 @@ menuInput.addEventListener('submit', (event) => {
 
     } else {
         //change alert to modal
-        alert('please enter current mileage')
+        prompt.style.display = 'block';
+        promptTxt.textContent = "Please enter current mileage!";
+        exitPrompt.style.display = 'none';
+        setTimeout(() => {
+            prompt.style.display = 'none'
+            exitPrompt.style.display = 'block';           
+        }, 1500);
+
         return
     }
     switch(menVal) {
