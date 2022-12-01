@@ -5,7 +5,16 @@ const vin = document.querySelector('#vin');
 const tire = document.querySelector('#tire');
 const engine = document.querySelector('#engine');
 
-const saveBtn = document.querySelector('#save');
+//input values
+const makeVal = document.querySelector('#make-val');
+const modelVal = document.querySelector('#model-val');
+const yearVal = document.querySelector('#year-val');
+const vinVal = document.querySelector('#vin-val');
+const tireVal = document.querySelector('#tire-val');
+const engineVal = document.querySelector('#engine-val');
+
+const Btn = document.querySelector('#save-edit');
+const input = document.querySelectorAll('.value')
 
 //set values from localstorage
 make.textContent = localStorage.getItem('make');
@@ -15,32 +24,46 @@ vin.textContent = localStorage.getItem('VIN');
 tire.textContent = localStorage.getItem('tire');
 engine.textContent = localStorage.getItem('engine');
 
-//add eventlistener to each box
-const saveArr = [make, model, year, vin, tire, engine];
-for(let i = 0; i < saveArr.length; i++) {
-    saveArr[i].addEventListener('input',() => saveBtn.style.display = 'block');
-}
-
 //if box is not empty save it to localstorage
+///NEEDS REFACTORING
 const save = () => {
-    if(make.textContent !== ''){
-        localStorage.setItem('make', make.textContent)
+    if(makeVal.value !== ''){
+        localStorage.setItem('make', makeVal.value)
     } 
-    if(model.textContent !== ''){
-        localStorage.setItem('model', model.textContent)
+    if(modelVal.value !== ''){
+        localStorage.setItem('model', modelVal.value)
     } 
-    if(year.textContent !== ''){
-        localStorage.setItem('year', year.textContent)
+    if(yearVal.value !== ''){
+        localStorage.setItem('year', yearVal.value)
     } 
-    if(vin.textContent.trim() !== ''){
-        localStorage.setItem('VIN', vin.textContent)
+    if(vinVal.value.trim() !== ''){
+        localStorage.setItem('VIN', vinVal.value)
     } 
-    if(tire.textContent !== ''){
-        localStorage.setItem('tire', tire.textContent)
+    if(tireVal.value !== ''){
+        localStorage.setItem('tire', tireVal.value)
     } 
-    if(engine.textContent !== ''){
-        localStorage.setItem('engine', engine.textContent)
+    if(engineVal.value !== ''){
+        localStorage.setItem('engine', engineVal.value)
     }
     location.reload();
 }
-saveBtn.addEventListener('click', save);
+
+//edit input
+const edit = () => {
+    for(let i = 0; i < input.length; i++){
+        input[i].style.display = 'block';
+        }
+        Btn.textContent = 'Save'
+        return
+}
+
+
+Btn.addEventListener('click', () => {
+    if(Btn.textContent === 'Edit'){
+    edit();
+    }else if(Btn.textContent === 'Save'){
+  save();
+    }
+});
+
+

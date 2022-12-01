@@ -17,14 +17,38 @@
     <br>
     <div class="d-flex flex-column align-items-center text-white">
         <ul class="list-unstyled p-2 spec-list">
-            <li class="spec"><small>Make: </small><span class="ml-2" contenteditable="true" id="make"></span></li>
-            <li class="spec"><small>Model: </small><span class="ml-2" contenteditable="true" id="model"></span></li>
-            <li class="spec"><small>Year: </small><span class="ml-2" contenteditable="true" id="year"></span></li>
-            <li class="spec"><small>VIN: </small><span class="ml-2" contenteditable="true" id="vin"></span></li>
-            <li class="spec"><small>Tire size: </small><span class="ml-2" contenteditable="true" id="tire"></span></li>
-            <li class="spec"><small>Engine: </small><span class="ml-2" contenteditable="true" id="engine"></span></li>
+            <li class="spec">
+                <small>Make: </small>
+                <span class="ml-2" id="make"></span>
+                <input type="text" class="value" id="make-val">
+            </li>
+            <li class="spec">
+                <small>Model: </small>
+                <span class="ml-2" id="model"></span>
+                <input type="text" class="value" id="model-val">
+            </li>
+            <li class="spec">
+                <small>Year: </small>
+                <span class="ml-2" id="year"></span>
+                <input type="text" class="value" id="year-val">
+            </li>
+            <li class="spec">
+                <small>VIN: </small>
+                <span class="ml-2" id="vin"></span>
+                <input type="text" class="value" id="vin-val">
+            </li>
+            <li class="spec">
+                <small>Tire size: </small>
+                <span class="ml-2" id="tire"></span>
+                <input type="text" class="value" id="tire-val">
+            </li>
+            <li class="spec">
+                <small>Engine: </small>
+                <span class="ml-2" id="engine"></span>
+                <input type="text" class="value" id="engine-val">
+            </li>
         </ul>
-        <button type="button" id="save" class="enter btn shadow btn-dark text-white btn-outline-dark">Save</button>
+        <button type="button" id="save-edit" class="enter btn shadow btn-dark text-white btn-outline-dark">Edit</button>
     </div>
 
     <div id="modal" data-page="specs">

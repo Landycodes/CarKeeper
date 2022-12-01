@@ -11,16 +11,6 @@ body {
     background-image: url('./assets/Maintenance_bg.png');
 }
 
-.enter, h5, label, ul {
-    background-color: var(--blk);
-    border-radius: 15px;
-    border: 2px solid darkred;
-}
-#save {
-    display: none;
-    width: 10%;
-    font-size: large;
-}
 nav {
     background-color: var(--blk);
 }
@@ -32,16 +22,6 @@ li {
 }
 li:last-child {
     border: none;
-}
-.spec {
-    cursor:text;
-}
-.menu {
-    cursor: pointer;
-    margin: 0;
-    height: 80px;
-    width: auto;
-    position: relative;
 }
 
 select {
@@ -55,9 +35,40 @@ a:hover {
     text-decoration: none;
     color: darkgrey;
 }
+.enter, h5, label, ul {
+    background-color: var(--blk);
+    border-radius: 15px;
+    border: 2px solid darkred;
+}
 
+/* nav menu icon */
+.menu {
+    cursor: pointer;
+    margin: 0;
+    height: 80px;
+    width: auto;
+    position: relative;
+}
+
+/* specs.html button */
+#save-edit {
+    width: 10%;
+    font-size: large;
+}
+
+
+/* specs.html li */
 .spec-list {
     width: 25%;
+}
+
+.value {
+    display: none;
+    color: white;
+    border-radius: 5px;
+    border: 1px white solid;
+    background-color: var(--blk);
+    caret-color: white;
 }
 
 /* Modal */
@@ -102,7 +113,7 @@ a:hover {
   cursor: pointer;
 }
 
-@media  (min-width: 360px) and (max-width: 700px){
+@media  (min-width: 260px) and (max-width: 1000px){
     h3{
         font-size: 4vw;
     }
