@@ -73,3 +73,5 @@ saveBtn.on("click", () => {
 
   return;
 });
+
+//error occurs in maint.js if localstorage has not been set
