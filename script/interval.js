@@ -62,12 +62,12 @@ saveBtn.on("click", () => {
   };
   localStorage.setItem("intervals", JSON.stringify(intervals));
 
-  prompt.style.display = "block";
-  promptTxt.textContent = "Intervals have been updated!";
-  exitPrompt.style.display = "none";
+  prompt.css("display", "block");
+  promptTxt.text("Intervals have been updated!");
+  exitPrompt.css("display", "none");
   setTimeout(() => {
-    prompt.style.display = "none";
-    exitPrompt.style.display = "block";
+    prompt.css("display", "none");
+    exitPrompt.css("display", "block");
     saveBtn.css("display", "none");
   }, 1500);
 

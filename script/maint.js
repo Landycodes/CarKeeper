@@ -1,20 +1,20 @@
 //Maintanence list
-const oil = document.querySelector("#oil");
-const coolant = document.querySelector("#coolant");
-const brake = document.querySelector("#brake");
-const ps = document.querySelector("#ps");
-const trans = document.querySelector("#trans");
-const tiro = document.querySelector("#tiro");
+const oil = $("#oil");
+const coolant = $("#coolant");
+const brake = $("#brake");
+const ps = $("#ps");
+const trans = $("#trans");
+const tiro = $("#tiro");
 
 const spanEl = document.querySelectorAll(".span");
 
 //get and set stored values
-oil.textContent = localStorage.getItem("oil");
-coolant.textContent = localStorage.getItem("coolant");
-brake.textContent = localStorage.getItem("brake");
-ps.textContent = localStorage.getItem("ps");
-trans.textContent = localStorage.getItem("trans");
-tiro.textContent = localStorage.getItem("tiro");
+oil.text(localStorage.getItem("oil"));
+coolant.text(localStorage.getItem("coolant"));
+brake.text(localStorage.getItem("brake"));
+ps.text(localStorage.getItem("ps"));
+trans.text(localStorage.getItem("trans"));
+tiro.text(localStorage.getItem("tiro"));
 
 //get intervals from local storage
 const interval = JSON.parse(localStorage.getItem("intervals"));
@@ -27,23 +27,23 @@ const tiroInt = parseInt(interval.tiro);
 const transInt = parseInt(interval.trans);
 
 //Maintanence performed input
-const menuInput = document.querySelector("#maint-input");
-menuInput.addEventListener("submit", (event) => {
+const menuInput = $("#maint-input");
+menuInput.on("submit", (event) => {
   event.preventDefault();
-  const menVal = document.querySelector("#maint-menu").value.trim();
-  let miles = document.querySelector("#miles").value.trim();
+  const menVal = $("#maint-menu").val().trim();
+  let miles = $("#miles").val();
 
   //if input value is not empty then add to maintenance list
   if (miles !== "") {
     miles = Number(miles);
   } else {
     //change alert to modal
-    prompt.style.display = "block";
-    promptTxt.textContent = "Please enter current mileage!";
-    exitPrompt.style.display = "none";
+    prompt.css("display", "block");
+    promptTxt.text("Please enter current mileage!");
+    exitPrompt.css("display", "none");
     setTimeout(() => {
-      prompt.style.display = "none";
-      exitPrompt.style.display = "block";
+      prompt.css("display", "none");
+      exitPrompt.css("display", "block");
     }, 1500);
 
     return;
@@ -51,43 +51,50 @@ menuInput.addEventListener("submit", (event) => {
   switch (menVal) {
     case "oil":
       let nextOil = miles + oilInt;
-      oil.textContent = nextOil
+      oil
+        .text(nextOil)
         .toString()
         .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      localStorage.setItem("oil", oil.textContent);
+      localStorage.setItem("oil", oil.text());
       break;
     case "coolant":
       let nextCool = miles + coolInt;
-      coolant.textContent = nextCool
+      coolant
+        .text(nextCool)
         .toString()
         .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      localStorage.setItem("coolant", coolant.textContent);
+      localStorage.setItem("coolant", coolant.text());
       break;
     case "brake":
       let nextBrake = miles + brakeInt;
-      brake.textContent = nextBrake
+      brake
+        .text(nextBrake)
         .toString()
         .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      localStorage.setItem("brake", brake.textContent);
+      localStorage.setItem("brake", brake.text());
       break;
     case "ps":
       let nextPs = miles + psInt;
-      ps.textContent = nextPs.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      localStorage.setItem("ps", ps.textContent);
+      ps.text(nextPs)
+        .toString()
+        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      localStorage.setItem("ps", ps.text());
       break;
     case "trans":
       let nextTrans = miles + transInt;
-      trans.textContent = nextTrans
+      trans
+        .text(nextTrans)
         .toString()
         .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      localStorage.setItem("trans", trans.textContent);
+      localStorage.setItem("trans", trans.text());
       break;
     case "tiro":
       let nextTiro = miles + tiroInt;
-      tiro.textContent = nextTiro
+      tiro
+        .text(nextTiro)
         .toString()
         .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      localStorage.setItem("tiro", tiro.textContent);
+      localStorage.setItem("tiro", tiro.text());
   }
   location.reload();
 });
