@@ -24,7 +24,12 @@ vin.textContent = localStorage.getItem('VIN');
 tire.textContent = localStorage.getItem('tire');
 engine.textContent = localStorage.getItem('engine');
 
+<<<<<<< HEAD
 //if box is not empty save it to localstorage and reset page
+=======
+//if box is not empty save it to localstorage
+///NEEDS REFACTORING
+>>>>>>> 847353a4aa6d96a7215145277c44db6a75ae1d26
 const save = () => {
     if(makeVal.value !== ''){
         localStorage.setItem('make', makeVal.value)
@@ -56,7 +61,11 @@ const edit = () => {
         return
 }
 
+<<<<<<< HEAD
 //edit-save button
+=======
+
+>>>>>>> 847353a4aa6d96a7215145277c44db6a75ae1d26
 Btn.addEventListener('click', () => {
     if(Btn.textContent === 'Edit'){
     edit();
