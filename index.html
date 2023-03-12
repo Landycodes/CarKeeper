@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <title>CarKeeper</title>
+</head>
+<body>
+    <nav class="nav-fill d-flex align-items-center justify-content-between">
+        <img class="menu invisible" src="./assets/menu_icon.png" alt="Menu">
+        <h2 class="text-white">Maintenance</h2>
+        <img class="menu mr-2" id="menu" src="./assets/menu_icon.png" alt="Menu">
+    </nav>
+    <div class="d-flex flex-column align-items-center text-white">
+        <br>
+        <ul class="list-unstyled p-2">
+            <li>Oil Change: <span class="span" id="oil"></span></li>            
+            <li>Coolant Flush: <span class="span" id="coolant"></span></li>
+            <li>Power Steering: <span class="span" id="ps"></span></li>
+            <li>Brake/Clutch Fluid: <span class="span" id="brake"></span></li>
+            <li>Tire Rotation: <span class="span" id="tiro"></span></li>
+            <li>Transmission Flush: <span class="span" id="trans"></span></li>
+        </ul>
+        <form id="maint-input" class="d-flex flex-column">
+            <label for="select" class="text-center font-weight-bold p-1">Performed</label>
+            <select name="maint-menu" id="maint-menu">
+                <option value="oil">Oil Change</option>
+                <option value="coolant">Coolant Flush</option>
+                <option value="brake">Brake/Clutch Fluid</option>
+                <option value="ps">Power Steering Flush</option>
+                <option value="trans">Transmission Flush</option>
+                <option value="tiro">Tire Rotation</option>
+            </select>
+            <br>
+            <label for="miles" class="text-center font-weight-bold p-1">Current Mileage</label>
+            <input type="text" id="miles" class="shadow border-0"/>
+            <br>
+            <button type="submit" class="enter btn shadow btn-dark text-white btn-outline-dark">Enter</button>
+        </form>
+        <br>
+    </div>
+    <div id="modal" data-page="main">
+        <div id="modalContent">
+            <span id="close">X</span>
+            <h3 id="promptTxt">
+
+            </h3>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="./script/maint.js"></script>
+    <script src="./script/menu.js"></script>
+</body>
+</html>

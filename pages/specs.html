@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css">
+    <title>CarKeeper</title>
+</head>
+<body>
+    <nav class="nav-fill d-flex align-items-center justify-content-between">
+        <img class="menu invisible" src="../assets/menu_icon.png" alt="Menu">
+        <h2 class="text-white">Specifications</h2>
+        <img class="menu mr-2" id="menu" src="../assets/menu_icon.png" alt="Menu">
+    </nav>
+    <br>
+    <div class="d-flex flex-column align-items-center text-white">
+        <ul class="list-unstyled p-2 spec-list">
+            <li class="spec">
+                <small>Make: </small>
+                <span class="ml-2" id="make"></span>
+                <input type="text" class="value" id="make-val">
+            </li>
+            <li class="spec">
+                <small>Model: </small>
+                <span class="ml-2" id="model"></span>
+                <input type="text" class="value" id="model-val">
+            </li>
+            <li class="spec">
+                <small>Year: </small>
+                <span class="ml-2" id="year"></span>
+                <input type="text" class="value" id="year-val">
+            </li>
+            <li class="spec">
+                <small>VIN: </small>
+                <span class="ml-2" id="vin"></span>
+                <input type="text" class="value" id="vin-val">
+            </li>
+            <li class="spec">
+                <small>Tire size: </small>
+                <span class="ml-2" id="tire"></span>
+                <input type="text" class="value" id="tire-val">
+            </li>
+            <li class="spec">
+                <small>Engine: </small>
+                <span class="ml-2" id="engine"></span>
+                <input type="text" class="value" id="engine-val">
+            </li>
+        </ul>
+        <button type="button" id="save-edit" class="enter btn shadow btn-dark text-white btn-outline-dark">Edit</button>
+    </div>
+
+    <div id="modal" data-page="specs">
+        <div id="modalContent">
+            <span id="close">X</span>
+            <h3 id="promptTxt">
+            </h3>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="../script/spec.js"></script>
+    <script src="../script/menu.js"></script>
+</body>
+</html>
