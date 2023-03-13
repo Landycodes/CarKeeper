@@ -18,13 +18,12 @@ tiro.text(localStorage.getItem("tiro"));
 
 //get intervals from local storage
 const interval = JSON.parse(localStorage.getItem("intervals"));
-console.log(interval);
-const oilInt = parseInt(interval.oil);
-const coolInt = parseInt(interval.cool);
-const psInt = parseInt(interval.ps);
-const brakeInt = parseInt(interval.br);
-const tiroInt = parseInt(interval.tiro);
-const transInt = parseInt(interval.trans);
+const oilInt = interval ? parseInt(interval.oil) : 3500;
+const coolInt = interval ? parseInt(interval.cool) : 16000;
+const psInt = interval ? parseInt(interval.ps) : 30000;
+const brakeInt = interval ? parseInt(interval.br) : 30000;
+const tiroInt = interval ? parseInt(interval.tiro) : 7000;
+const transInt = interval ? parseInt(interval.trans) : 45000;
 
 //Maintanence performed input
 const menuInput = $("#maint-input");
@@ -51,50 +50,51 @@ menuInput.on("submit", (event) => {
   switch (menVal) {
     case "oil":
       let nextOil = miles + oilInt;
-      oil
-        .text(nextOil)
-        .toString()
-        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      localStorage.setItem("oil", oil.text());
+      oil.text(nextOil).toString();
+      localStorage.setItem(
+        "oil",
+        oil.text().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+      );
       break;
     case "coolant":
       let nextCool = miles + coolInt;
-      coolant
-        .text(nextCool)
-        .toString()
-        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      localStorage.setItem("coolant", coolant.text());
+      coolant.text(nextCool).toString();
+      localStorage.setItem(
+        "coolant",
+        coolant.text().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+      );
       break;
     case "brake":
       let nextBrake = miles + brakeInt;
-      brake
-        .text(nextBrake)
-        .toString()
-        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      localStorage.setItem("brake", brake.text());
+      brake.text(nextBrake).toString();
+      localStorage.setItem(
+        "brake",
+        brake.text().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+      );
       break;
     case "ps":
       let nextPs = miles + psInt;
-      ps.text(nextPs)
-        .toString()
-        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      localStorage.setItem("ps", ps.text());
+      ps.text(nextPs).toString();
+      localStorage.setItem(
+        "ps",
+        ps.text().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+      );
       break;
     case "trans":
       let nextTrans = miles + transInt;
-      trans
-        .text(nextTrans)
-        .toString()
-        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      localStorage.setItem("trans", trans.text());
+      trans.text(nextTrans).toString();
+      localStorage.setItem(
+        "trans",
+        trans.text().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+      );
       break;
     case "tiro":
       let nextTiro = miles + tiroInt;
-      tiro
-        .text(nextTiro)
-        .toString()
-        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      localStorage.setItem("tiro", tiro.text());
+      tiro.text(nextTiro).toString();
+      localStorage.setItem(
+        "tiro",
+        tiro.text().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+      );
   }
   location.reload();
 });
@@ -108,9 +108,8 @@ const Milestxt = () => {
   }
 };
 Milestxt();
-//attaching Miles is buggy. only appears on refresh or adds multiple
 
-//Maintanece intervals
+//default Maintanece intervals
 //oil every 3.5k
 //coolant every 16k
 //brake/clutch flush 30k

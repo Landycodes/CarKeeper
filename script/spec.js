@@ -1,48 +1,33 @@
-const make = document.querySelector("#make");
-const model = document.querySelector("#model");
-const year = document.querySelector("#year");
-const vin = document.querySelector("#vin");
-const tire = document.querySelector("#tire");
-const engine = document.querySelector("#engine");
-
-//input values
-const makeVal = document.querySelector("#make-val");
-const modelVal = document.querySelector("#model-val");
-const yearVal = document.querySelector("#year-val");
-const vinVal = document.querySelector("#vin-val");
-const tireVal = document.querySelector("#tire-val");
-const engineVal = document.querySelector("#engine-val");
-
-const Btn = document.querySelector("#save-edit");
+const Btn = $("#save-edit");
 const input = document.querySelectorAll(".value");
 
 //set values from localstorage
-make.textContent = localStorage.getItem("make");
-model.textContent = localStorage.getItem("model");
-year.textContent = localStorage.getItem("year");
-vin.textContent = localStorage.getItem("VIN");
-tire.textContent = localStorage.getItem("tire");
-engine.textContent = localStorage.getItem("engine");
+$("#make").text(localStorage.getItem("make"));
+$("#model").text(localStorage.getItem("model"));
+$("#year").text(localStorage.getItem("year"));
+$("#vin").text(localStorage.getItem("VIN"));
+$("#tire").text(localStorage.getItem("tire"));
+$("#engine").text(localStorage.getItem("engine"));
 
 //if box is not empty save it to localstorage and reset page
 const save = () => {
-  if (makeVal.value !== "") {
-    localStorage.setItem("make", makeVal.value);
+  if ($("#make-val").val().trim() !== "") {
+    localStorage.setItem("make", $("#make-val").val().trim());
   }
-  if (modelVal.value !== "") {
-    localStorage.setItem("model", modelVal.value);
+  if ($("#model-val").text().trim() !== "") {
+    localStorage.setItem("model", $("#model-val").text().trim());
   }
-  if (yearVal.value !== "") {
-    localStorage.setItem("year", yearVal.value);
+  if ($("#year-val").text().trim() !== "") {
+    localStorage.setItem("year", $("#year-val").text().trim());
   }
-  if (vinVal.value.trim() !== "") {
-    localStorage.setItem("VIN", vinVal.value);
+  if ($("#vin-val").text().trim().trim() !== "") {
+    localStorage.setItem("VIN", $("#vin-val").text().trim());
   }
-  if (tireVal.value !== "") {
-    localStorage.setItem("tire", tireVal.value);
+  if ($("#tire-val").text().trim() !== "") {
+    localStorage.setItem("tire", $("#tire-val").text().trim());
   }
-  if (engineVal.value !== "") {
-    localStorage.setItem("engine", engineVal.value);
+  if ($("#engine-val").text().trim() !== "") {
+    localStorage.setItem("engine", $("#engine-val").text().trim());
   }
   location.reload();
 };
@@ -52,15 +37,15 @@ const edit = () => {
   for (let i = 0; i < input.length; i++) {
     input[i].style.display = "block";
   }
-  Btn.textContent = "Save";
+  Btn.text("Save");
   return;
 };
 
 //edit-save button
-Btn.addEventListener("click", () => {
-  if (Btn.textContent === "Edit") {
+Btn.click(() => {
+  if (Btn.text() === "Edit") {
     edit();
-  } else if (Btn.textContent === "Save") {
+  } else if (Btn.text() === "Save") {
     save();
   }
 });
