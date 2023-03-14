@@ -143,3 +143,31 @@ input::-webkit-inner-spin-button {
         width: 50%;
     }
 }
+
+/* status page */
+
+
+.slider {
+    position: absolute;
+    height: 43px;
+    width: 80px;
+    background-color: white;
+    border: 2px solid darkred;
+    border-radius: 15px;
+    margin: 0;
+    transition: transform 0.5s ease-in-out;
+}
+.slide-right {
+    transform: translateX(0px);
+}
+.slide-left {
+    transform: translateX(-100px);
+}
+#tread {
+    z-index: 1;
+    cursor: pointer;
+}
+#brake {
+    z-index: 1;
+    cursor: pointer;
+}
