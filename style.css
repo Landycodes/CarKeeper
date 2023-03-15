@@ -164,6 +164,16 @@ input::-webkit-inner-spin-button {
     z-index: 1;
     cursor: pointer;
 }
+#status-container {
+    background-image: url('./assets/axle.png');
+    background-position: center;
+    width: 375px;
+    height: 500px;
+}
+#status-container > div {
+    height: 100px;
+    width: 100px;
+}
 
 
 @media  (min-width: 260px) and (max-width: 1000px){
