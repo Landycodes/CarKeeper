@@ -14,20 +14,20 @@ const save = () => {
   if ($("#make-val").val().trim() !== "") {
     localStorage.setItem("make", $("#make-val").val().trim());
   }
-  if ($("#model-val").text().trim() !== "") {
-    localStorage.setItem("model", $("#model-val").text().trim());
+  if ($("#model-val").val().trim() !== "") {
+    localStorage.setItem("model", $("#model-val").val().trim());
   }
-  if ($("#year-val").text().trim() !== "") {
-    localStorage.setItem("year", $("#year-val").text().trim());
+  if ($("#year-val").val().trim() !== "") {
+    localStorage.setItem("year", $("#year-val").val().trim());
   }
-  if ($("#vin-val").text().trim().trim() !== "") {
-    localStorage.setItem("VIN", $("#vin-val").text().trim());
+  if ($("#vin-val").val().trim().trim() !== "") {
+    localStorage.setItem("VIN", $("#vin-val").val().trim());
   }
-  if ($("#tire-val").text().trim() !== "") {
-    localStorage.setItem("tire", $("#tire-val").text().trim());
+  if ($("#tire-val").val().trim() !== "") {
+    localStorage.setItem("tire", $("#tire-val").val().trim());
   }
-  if ($("#engine-val").text().trim() !== "") {
-    localStorage.setItem("engine", $("#engine-val").text().trim());
+  if ($("#engine-val").val().trim() !== "") {
+    localStorage.setItem("engine", $("#engine-val").val().trim());
   }
   location.reload();
 };
