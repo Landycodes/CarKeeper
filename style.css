@@ -175,11 +175,12 @@ input::-webkit-inner-spin-button {
     height: 100px;
     width: 100px;
 }
-.stat-val {
+.tread-val, .brake-val {
     background-color: var(--blk);
     border: 2px solid darkgray;
     caret-color: white;
     color: white;
+    display: none;
 }
 
 
